@@ -3,10 +3,11 @@ package com.kole;
 import java.util.Scanner;
 
 public class Main {
+    private static MobilePhone mobilePhone = new MobilePhone("123");
     private static Scanner scanner = new Scanner(System.in);
     public static void main(String[] args) {
 
-        MobilePhone mobilePhone = new MobilePhone("123");
+
 
 
         boolean quit = false;
@@ -21,9 +22,10 @@ public class Main {
                     printInstructions();
                     break;
                 case 1:
-                    mobilePhone.addContact(scanner.nextLine(), scanner.nextLine());
+                    addNewContact();
                     break;
                 case 2:
+                    System.out.println("Enter name to remove: ");
                     mobilePhone.removeContact(scanner.nextLine());
                     break;
                 case 3:
@@ -54,6 +56,9 @@ public class Main {
 
     private static void addNewContact(){
         System.out.println("Enter name and number to add new contact");
+        String name = scanner.nextLine();
+        String number = scanner.nextLine();
+        mobilePhone.addContact(name,number);
 
     }
 }

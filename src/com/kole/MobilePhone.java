@@ -20,7 +20,7 @@ public class MobilePhone {
     public void printContacts(){
         System.out.println("There are " + myContacts.size() + " contact(s) in your phone book.");
         for (int i=0; i<myContacts.size();i++){
-            System.out.println(i+1 + " " +myContacts.get(i).getName()+ " " + " with name " + myContacts.get(i).getNumber());
+            System.out.println(i+1 + " " + myContacts.get(i).getName()+ " " + " with name " + myContacts.get(i).getNumber());
         }
     }
 
