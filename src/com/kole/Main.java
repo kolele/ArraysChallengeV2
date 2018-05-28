@@ -6,14 +6,20 @@ public class Main{
 
     private static Scanner scanner = new Scanner(System.in);
     private static MobilePhone mobilePhone = new MobilePhone("Koletov", 123456);
+
     public static void main(String[] args) {
 
 
         boolean quit = false;
         printInstructions();
-        int choice = scanner.nextInt();
+
+
 
         while (!quit){
+
+            int choice = scanner.nextInt();
+            scanner.nextLine();
+
             switch (choice){
                 case 0:
                     printInstructions();
@@ -25,13 +31,13 @@ public class Main{
                     addContact();
                     break;
                 case 3:
-                    removeContact();
+                    updateContact();
                     break;
                 case 4:
-                    searchContact();
+                    removeContact();
                     break;
                 case 5:
-                    updateContact();
+                    searchContact();
                     break;
                 case 6:
                     quit=true;
@@ -53,9 +59,9 @@ public class Main{
     }
 
     private static void addContact(){
-        System.out.println("Please enter contact name");
+        System.out.println("Please enter contact name to add");
         String name = scanner.nextLine();
-        System.out.println("Please enter contact number");
+        System.out.println("Please enter contact number to add");
         int number = scanner.nextInt();
         mobilePhone.addContact(name,number);
     }
