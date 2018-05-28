@@ -31,7 +31,8 @@ public class MobilePhone {
 
     public void printContacts(){
         for (int i=0; i<contacts.size();i++){
-            System.out.println("Contact with name " + contacts.get(i).getName() + " with phone number " + contacts.get(i).getNumber() + " is at position " + contacts.get(i).getName().indexOf(name)  + " in the phonebook.");
+            Contact tempContact = contacts.get(i);
+            System.out.println("Contact with name " + contacts.get(i).getName() + " with phone number " + contacts.get(i).getNumber() + " is at position " + contacts.indexOf(tempContact)  + " in the phonebook.");
         }
     }
 }
