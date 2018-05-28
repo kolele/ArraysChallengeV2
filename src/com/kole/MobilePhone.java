@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class MobilePhone {
     private String name;
     private int number;
-    ArrayList<Contact> contacts;
+    private ArrayList<Contact> contacts;
 
     public MobilePhone(String name, int number) {
         this.name = name;
@@ -14,21 +14,24 @@ public class MobilePhone {
     }
 
     public void addContact(String name, int number) {
-        contacts.add(new Contact(name, number));
+        if (queryContact(name)>=0){
+            System.out.println("Contact already exists!");
+        } else contacts.add(new Contact(name,number));
+        System.out.println("Added contact " + name + " to the phonebook");
     }
 
-    private Contact findContact(String name, int number) {
-        Contact checkedContact = new Contact(name, number);
+    private int queryContact(String name) {
         for (int i = 0; i < contacts.size(); i++) {
             if (contacts.get(i).getName().contains(name)) {
-                System.out.println("Contact already exists wigga");
-                return null;
-            } else contacts.add(new Contact(name, number));
-
-        }
-
-        return checkedContact;
+                Contact tempContact = contacts.get(i);
+                return contacts.indexOf(tempContact);
+            }
+        }return -1;
     }
 
-
+    public void printContacts(){
+        for (int i=0; i<contacts.size();i++){
+            System.out.println("Contact with name " + contacts.get(i).getName() + " with phone number " + contacts.get(i).getNumber() + " is at position " + contacts.get(i).getName().indexOf(name)  + " in the phonebook.");
+        }
+    }
 }
