@@ -35,4 +35,20 @@ public class MobilePhone {
             System.out.println("Contact with name " + contacts.get(i).getName() + " with phone number " + contacts.get(i).getNumber() + " is at position " + contacts.indexOf(tempContact)  + " in the phonebook.");
         }
     }
+
+    public void removeContact(String name){
+        if (queryContact(name) < 0){
+            System.out.println("Non existing contact");
+        } else contacts.remove(queryContact(name));
+        System.out.println("Contact removed");
+    }
+
+    public void updateContact (String name, int number){
+        if (queryContact(name)<0){
+            System.out.println("Non existing contact");
+        } else contacts.set(queryContact(name),new Contact(name,number));
+        System.out.println("Contact updated");
+    }
+
+
 }
