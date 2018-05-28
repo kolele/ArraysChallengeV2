@@ -62,6 +62,6 @@ public class Main{
     }
 
     private static void searchContact(){
-        
+
     }
 }
