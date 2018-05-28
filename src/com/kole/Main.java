@@ -8,8 +8,10 @@ public class Main{
     private static MobilePhone mobilePhone = new MobilePhone("Koletov", 123456);
     public static void main(String[] args) {
 
-        int choice =0;
+
         boolean quit = false;
+        printInstructions();
+        int choice = scanner.nextInt();
 
         while (!quit){
             switch (choice){
@@ -41,7 +43,7 @@ public class Main{
 
     private static void printInstructions(){
         System.out.println("Enter your choice:");
-        System.out.println("To print this menu");
+        System.out.println("0 To print this menu");
         System.out.println("1 to print list of contacts");
         System.out.println("2 to add new contact");
         System.out.println("3 to modify contact");
