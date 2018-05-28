@@ -8,10 +8,8 @@ public class Main{
     private static MobilePhone mobilePhone = new MobilePhone("Koletov", 123456);
     public static void main(String[] args) {
 
-        int choice = 0;
+        int choice =0;
         boolean quit = false;
-
-
 
         while (!quit){
             switch (choice){
@@ -21,14 +19,17 @@ public class Main{
                 case 1:
                     mobilePhone.printContacts();
                     break;
-                case 3:
+                case 2:
                     addContact();
                     break;
+                case 3:
+                    removeContact();
+                    break;
                 case 4:
-                    updateContact();
+                    searchContact();
                     break;
                 case 5:
-                    searchContact();
+                    updateContact();
                     break;
                 case 6:
                     quit=true;
@@ -58,10 +59,22 @@ public class Main{
     }
 
     private static void updateContact(){
-
+        System.out.println("Please enter contact name");
+        String name = scanner.nextLine();
+        System.out.println("Please enter contact number");
+        int number = scanner.nextInt();
+        mobilePhone.updateContact(name,number);
     }
 
     private static void searchContact(){
+        System.out.println("Please enter contact name");
+        String name = scanner.nextLine();
+        mobilePhone.searchForContact(name);
+    }
 
+    private static void removeContact(){
+        System.out.println("Please enter contact name");
+        String name = scanner.nextLine();
+        mobilePhone.removeContact(name);
     }
 }

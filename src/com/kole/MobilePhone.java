@@ -29,6 +29,13 @@ public class MobilePhone {
         }return -1;
     }
 
+    public void searchForContact(String name){
+        int temp = queryContact(name);
+        if (queryContact(name)<0){
+            System.out.println("No such contact in phonebook");
+        } else System.out.println("Contact found at position " + (temp+1));
+    }
+
     public void printContacts(){
         for (int i=0; i<contacts.size();i++){
             int position = queryContact(contacts.get(i).getName());
