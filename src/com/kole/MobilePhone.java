@@ -20,7 +20,7 @@ public class MobilePhone {
         System.out.println("Added contact " + name + " to the phonebook");
     }
 
-    private int queryContact(String name) {
+    public int queryContact(String name) {
         for (int i = 0; i < contacts.size(); i++) {
             if (contacts.get(i).getName().contains(name)) {
                 Contact tempContact = contacts.get(i);
